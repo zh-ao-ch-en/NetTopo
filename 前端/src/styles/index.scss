@@ -1,0 +1,124 @@
+/* ========== 主题变量（浅色为默认，html.dark 覆盖为深色科技风） ========== */
+:root {
+  --bg-page: #eef1f6;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-hover: #f0f2f5;
+  --text-primary: #1f2733;
+  --text-secondary: #5a6472;
+  --text-weak: #8a94a3;
+  --border-color: #e2e6ec;
+  --primary: #2563eb;
+  --primary-soft: rgba(37, 99, 235, 0.1);
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #64748b;
+  --shadow-card: 0 6px 24px rgba(30, 41, 59, 0.08);
+}
+
+html.dark {
+  --bg-page: #0b1322;
+  --bg-card: #111b30;
+  --bg-sidebar: #0c1426;
+  --bg-hover: #1a2740;
+  --text-primary: #e6edf7;
+  --text-secondary: #a3b1c9;
+  --text-weak: #6b7a93;
+  --border-color: #1e2b45;
+  --primary: #3b82f6;
+  --primary-soft: rgba(59, 130, 246, 0.16);
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #94a3b8;
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* ========== 全局基础 ========== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-weak);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ========== 通用工具类 ========== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 16px;
+}
+
+/* Element Plus 深色背景下的分页/对话框主色微调 */
+html.dark .el-dialog {
+  background: var(--bg-card);
+}
+
+/* ========== 响应式适配 ========== */
+@media (max-width: 768px) {
+  .el-dialog {
+    width: 94% !important;
+    max-width: 94vw;
+  }
+  .el-drawer {
+    width: 92% !important;
+    max-width: 92vw;
+  }
+  .el-message-box {
+    width: 90% !important;
+    max-width: 90vw;
+  }
+  .el-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
