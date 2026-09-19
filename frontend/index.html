@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网络实验室拓扑与设备管理系统</title>
+    <script>
+      // 在首帧渲染前预置暗色主题，避免持久化 dark 时白屏闪烁；键值与 stores/theme.ts 的 setStorage 保持一致
+      try {
+        if (localStorage.getItem('lab_theme') === '"dark"') {
+          document.documentElement.classList.add('dark')
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
